@@ -1,0 +1,596 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  ShoppingCart, 
+  Zap, 
+  Clock, 
+  BarChart3, 
+  Check, 
+  ChevronRight, 
+  Menu, 
+  X,
+  ArrowRight,
+  Star,
+  Store,
+  Package,
+  Settings
+} from 'lucide-react';
+import { Button } from '../components/ui/button';
+
+const CALENDLY_URL = "https://calendly.com/firelaunch/30min";
+
+export default function HomePage() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [headlineAnimated, setHeadlineAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    
+    // Trigger headline animation
+    setTimeout(() => setHeadlineAnimated(true), 300);
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav 
+        className={`nav-sticky transition-all duration-300 ${isScrolled ? 'shadow-sm' : ''}`}
+        data-testid="main-navigation"
+      >
+        <div className="container-main">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2" data-testid="logo">
+              <div className="w-10 h-10 bg-[#D92D20] rounded-lg flex items-center justify-center">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-xl font-bold font-['Space_Grotesk'] text-[#0F172A]">
+                Fire Launch
+              </span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#services" className="link-hover text-[15px] font-medium">Services</a>
+              <a href="#pricing" className="link-hover text-[15px] font-medium">Pricing</a>
+              <Link to="/demos" className="link-hover text-[15px] font-medium">Demo Stores</Link>
+              <a href="#testimonials" className="link-hover text-[15px] font-medium">Results</a>
+            </div>
+
+            {/* Desktop CTA */}
+            <div className="hidden md:block">
+              <a 
+                href={CALENDLY_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                data-testid="nav-book-call-btn"
+              >
+                <Button className="bg-[#D92D20] hover:bg-[#B91C1C] text-white px-6 py-2.5 font-semibold hover:shadow-[0_0_30px_rgba(217,45,32,0.25)] transition-all duration-300">
+                  Book Free Call
+                </Button>
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              data-testid="mobile-menu-btn"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 py-4">
+            <div className="container-main flex flex-col gap-4">
+              <a href="#services" className="py-2 text-[15px] font-medium" onClick={() => setMobileMenuOpen(false)}>Services</a>
+              <a href="#pricing" className="py-2 text-[15px] font-medium" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
+              <Link to="/demos" className="py-2 text-[15px] font-medium" onClick={() => setMobileMenuOpen(false)}>Demo Stores</Link>
+              <a href="#testimonials" className="py-2 text-[15px] font-medium" onClick={() => setMobileMenuOpen(false)}>Results</a>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section className="section-padding pt-16 md:pt-24 relative overflow-hidden" data-testid="hero-section">
+        <div className="container-main">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="badge mb-6 animate-fade-in-up">
+              <Zap className="w-4 h-4 mr-2" />
+              UK's Founder-Led E-Commerce Launch Studio
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6 leading-tight animate-fade-in-up delay-100">
+              Launch Your{' '}
+              <span className={`headline-underline ${headlineAnimated ? 'animate' : ''}`}>
+                Shopify & eBay
+              </span>{' '}
+              Store in 14 Days
+            </h1>
+            
+            <p className="text-lg text-[#1F2A37] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-200">
+              We build structured, high-converting e-commerce systems for UK businesses. 
+              No guesswork. No delays. Just results.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+              <a 
+                href={CALENDLY_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                data-testid="hero-book-call-btn"
+              >
+                <Button className="btn-primary text-base px-8 py-6 w-full sm:w-auto">
+                  Book Your Free Strategy Call
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </a>
+              <Link to="/demos">
+                <Button variant="outline" className="btn-secondary text-base px-8 py-6 w-full sm:w-auto">
+                  View Demo Stores
+                </Button>
+              </Link>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-16 pt-8 border-t border-gray-100">
+              <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-[#0F172A] font-['Space_Grotesk']">50+</p>
+                  <p className="text-sm text-gray-500">Stores Launched</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-[#0F172A] font-['Space_Grotesk']">14</p>
+                  <p className="text-sm text-gray-500">Days Average</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-[#0F172A] font-['Space_Grotesk']">£2M+</p>
+                  <p className="text-sm text-gray-500">Client Revenue</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-[#0F172A] font-['Space_Grotesk']">100%</p>
+                  <p className="text-sm text-gray-500">UK Based</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section - Bento Grid */}
+      <section id="services" className="section-padding bg-[#F4F6F9]" data-testid="services-section">
+        <div className="container-main">
+          <div className="text-center mb-16">
+            <span className="badge mb-4">What We Do</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+              End-to-End E-Commerce Launch Services
+            </h2>
+            <p className="text-[#1F2A37] max-w-2xl mx-auto">
+              Everything you need to go from idea to live store, selling products and generating revenue.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Service Card 1 */}
+            <div className="card col-span-1 lg:col-span-2 flex flex-col md:flex-row gap-6" data-testid="service-shopify">
+              <div className="flex-shrink-0">
+                <div className="w-14 h-14 bg-[#D92D20]/10 rounded-xl flex items-center justify-center">
+                  <ShoppingCart className="w-7 h-7 text-[#D92D20]" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#0F172A] mb-3">Shopify Store Development</h3>
+                <p className="text-[#1F2A37] mb-4">
+                  Custom Shopify stores built for conversion. Premium themes, optimised checkout, 
+                  and integrations that actually work. Ready to sell from day one.
+                </p>
+                <ul className="space-y-2 text-sm text-[#1F2A37]">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#D92D20]" />
+                    Custom theme development
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#D92D20]" />
+                    Payment gateway setup
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#D92D20]" />
+                    Inventory management
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Service Card 2 */}
+            <div className="card" data-testid="service-ebay">
+              <div className="w-14 h-14 bg-[#D92D20]/10 rounded-xl flex items-center justify-center mb-4">
+                <Store className="w-7 h-7 text-[#D92D20]" />
+              </div>
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-3">eBay Store Setup</h3>
+              <p className="text-[#1F2A37]">
+                Professional eBay stores with optimised listings, templates, and automation. 
+                Reach millions of buyers instantly.
+              </p>
+            </div>
+
+            {/* Service Card 3 */}
+            <div className="card" data-testid="service-product">
+              <div className="w-14 h-14 bg-[#D92D20]/10 rounded-xl flex items-center justify-center mb-4">
+                <Package className="w-7 h-7 text-[#D92D20]" />
+              </div>
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-3">Product Upload</h3>
+              <p className="text-[#1F2A37]">
+                Bulk product uploads with SEO-optimised titles, descriptions, and imagery. 
+                Up to 100 products included.
+              </p>
+            </div>
+
+            {/* Service Card 4 */}
+            <div className="card" data-testid="service-analytics">
+              <div className="w-14 h-14 bg-[#D92D20]/10 rounded-xl flex items-center justify-center mb-4">
+                <BarChart3 className="w-7 h-7 text-[#D92D20]" />
+              </div>
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-3">Analytics Setup</h3>
+              <p className="text-[#1F2A37]">
+                Google Analytics 4, Facebook Pixel, and conversion tracking configured 
+                so you can measure what matters.
+              </p>
+            </div>
+
+            {/* Service Card 5 */}
+            <div className="card" data-testid="service-training">
+              <div className="w-14 h-14 bg-[#D92D20]/10 rounded-xl flex items-center justify-center mb-4">
+                <Settings className="w-7 h-7 text-[#D92D20]" />
+              </div>
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-3">Training & Handover</h3>
+              <p className="text-[#1F2A37]">
+                Complete training sessions and documentation so you can manage and scale 
+                your store with confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="section-padding" data-testid="pricing-section">
+        <div className="container-main">
+          <div className="text-center mb-16">
+            <span className="badge mb-4">Transparent Pricing</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+              Choose Your Launch Package
+            </h2>
+            <p className="text-[#1F2A37] max-w-2xl mx-auto">
+              Simple pricing. No hidden fees. 50% deposit to begin, 50% before launch.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Starter Launch */}
+            <div className="card relative" data-testid="pricing-starter">
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-2">Starter Launch</h3>
+              <p className="text-sm text-gray-500 mb-6">Perfect for new businesses</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-[#0F172A] font-['Space_Grotesk']">£799</span>
+              </div>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Shopify or eBay store setup</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Up to 25 product uploads</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Basic theme customisation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Payment gateway setup</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">7 days email support</span>
+                </li>
+              </ul>
+              <a 
+                href={CALENDLY_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button variant="outline" className="w-full btn-secondary py-6">
+                  Get Started
+                </Button>
+              </a>
+              <p className="text-xs text-center text-gray-400 mt-4">
+                £399.50 deposit • £399.50 before launch
+              </p>
+            </div>
+
+            {/* Growth Launch - Highlighted */}
+            <div className="card pricing-card-highlight relative" data-testid="pricing-growth">
+              <div className="badge-popular">Most Popular</div>
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-2 mt-2">Growth Launch</h3>
+              <p className="text-sm text-gray-500 mb-6">For businesses ready to scale</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-[#0F172A] font-['Space_Grotesk']">£999</span>
+              </div>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Shopify + eBay store setup</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Up to 50 product uploads</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Premium theme customisation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Analytics & tracking setup</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">1-hour training session</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">14 days priority support</span>
+                </li>
+              </ul>
+              <a 
+                href={CALENDLY_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button className="w-full btn-primary py-6">
+                  Get Started
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </a>
+              <p className="text-xs text-center text-gray-400 mt-4">
+                £499.50 deposit • £499.50 before launch
+              </p>
+            </div>
+
+            {/* Authority Launch */}
+            <div className="card relative" data-testid="pricing-authority">
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-2">Authority Launch</h3>
+              <p className="text-sm text-gray-500 mb-6">For established brands</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-[#0F172A] font-['Space_Grotesk']">£1,500</span>
+              </div>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Multi-channel store setup</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Up to 100 product uploads</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Custom design & branding</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Advanced integrations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">3x training sessions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">30 days VIP support</span>
+                </li>
+              </ul>
+              <a 
+                href={CALENDLY_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button variant="outline" className="w-full btn-secondary py-6">
+                  Get Started
+                </Button>
+              </a>
+              <p className="text-xs text-center text-gray-400 mt-4">
+                £750 deposit • £750 before launch
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="section-padding bg-[#F4F6F9]" data-testid="testimonials-section">
+        <div className="container-main">
+          <div className="text-center mb-16">
+            <span className="badge mb-4">Client Results</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-[#1F2A37] max-w-2xl mx-auto">
+              Real feedback from UK business owners who launched with Fire Launch.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Testimonial 1 */}
+            <div className="testimonial-card" data-testid="testimonial-1">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#D92D20] text-[#D92D20]" />
+                ))}
+              </div>
+              <p className="text-[#1F2A37] mb-6">
+                "Fire Launch delivered exactly what they promised. My Shopify store was live in 12 days, 
+                and I made my first sale within 48 hours. The training was invaluable - I feel confident 
+                managing everything myself now."
+              </p>
+              <div className="flex items-center gap-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1758518727888-ffa196002e59?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxjb25maWRlbnQlMjBidXNpbmVzcyUyMHdvbWFuJTIwcG9ydHJhaXQlMjBvZmZpY2V8ZW58MHx8fHwxNzcwODM3NzgyfDA&ixlib=rb-4.1.0&q=85"
+                  alt="Sarah Jenkins"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-[#0F172A]">Sarah Jenkins</p>
+                  <p className="text-sm text-gray-500">Boutique Owner, London</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="testimonial-card" data-testid="testimonial-2">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#D92D20] text-[#D92D20]" />
+                ))}
+              </div>
+              <p className="text-[#1F2A37] mb-6">
+                "I'd tried setting up my own eBay store twice before and failed. Fire Launch made it 
+                look easy. Professional listings, proper templates, everything integrated. My sales have 
+                tripled compared to my old setup."
+              </p>
+              <div className="flex items-center gap-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwxfHxjb25maWRlbnQlMjBidXNpbmVzcyUyMG1hbiUyMHBvcnRyYWl0JTIwb2ZmaWNlfGVufDB8fHx8MTc3MDgzNzc4OHww&ixlib=rb-4.1.0&q=85"
+                  alt="David Thorne"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-[#0F172A]">David Thorne</p>
+                  <p className="text-sm text-gray-500">Tech Retailer, Manchester</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="section-padding bg-[#0F172A]" data-testid="cta-section">
+        <div className="container-main text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Ready to Launch Your Store?
+          </h2>
+          <p className="text-gray-300 mb-10 max-w-2xl mx-auto">
+            Book a free 30-minute strategy call. We'll discuss your business, 
+            your goals, and create a clear roadmap to launch in 14 days.
+          </p>
+          <a 
+            href={CALENDLY_URL} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            data-testid="final-cta-btn"
+          >
+            <Button className="btn-primary text-lg px-10 py-7">
+              Book Your Free Strategy Call
+              <ChevronRight className="w-5 h-5 ml-2" />
+            </Button>
+          </a>
+          <p className="text-gray-400 text-sm mt-6">
+            No obligation. No hard sell. Just honest advice.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#0F172A] border-t border-gray-800 py-12" data-testid="footer">
+        <div className="container-main">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Brand */}
+            <div className="md:col-span-2">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 bg-[#D92D20] rounded-lg flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-xl font-bold font-['Space_Grotesk'] text-white">
+                  Fire Launch
+                </span>
+              </div>
+              <p className="text-gray-400 max-w-sm">
+                UK's founder-led e-commerce launch studio. We help businesses launch 
+                structured Shopify and eBay systems in 14 days.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-semibold text-white mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li><a href="#services" className="footer-link">Services</a></li>
+                <li><a href="#pricing" className="footer-link">Pricing</a></li>
+                <li><Link to="/demos" className="footer-link">Demo Stores</Link></li>
+                <li><a href="#testimonials" className="footer-link">Results</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-semibold text-white mb-4">Get in Touch</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href={CALENDLY_URL} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                  >
+                    Book a Call
+                  </a>
+                </li>
+                <li><a href="mailto:hello@firelaunch.co.uk" className="footer-link">hello@firelaunch.co.uk</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">
+              © 2025 Fire Launch. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <a href="#" className="footer-link text-sm">Privacy Policy</a>
+              <a href="#" className="footer-link text-sm">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* Mobile CTA Bar */}
+      <div className="mobile-cta-bar md:hidden" data-testid="mobile-cta-bar">
+        <a 
+          href={CALENDLY_URL} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block"
+        >
+          <Button className="w-full btn-primary py-4">
+            Book Free Call
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+        </a>
+      </div>
+    </div>
+  );
+}
