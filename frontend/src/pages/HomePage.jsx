@@ -613,7 +613,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="section-padding" data-testid="testimonials-section">
+      <section id="testimonials" className="section-padding bg-[#F4F6F9]" data-testid="testimonials-section">
         <div className="container-main">
           <div className="text-center mb-12">
             <span className="badge mb-4">Client Results</span>
