@@ -27,6 +27,79 @@ import {
 
 const CALENDLY_URL = "https://calendly.com/firelaunch/30min";
 
+const testimonials = [
+  {
+    name: "Sarah Mitchell",
+    role: "Fashion Boutique Owner",
+    location: "Leeds",
+    quote: "Fire Launch delivered exactly what they promised. My Shopify store was live in 12 days, and I made my first sale within 48 hours. The training was invaluable - I feel confident managing everything myself now.",
+    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "James Harrison",
+    role: "Electronics Retailer",
+    location: "Bradford",
+    quote: "I'd tried setting up my own eBay store twice before and failed. Fire Launch made it look easy. Professional listings, proper templates, everything integrated. My sales have tripled compared to my old setup.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Emma Thompson",
+    role: "Handmade Crafts Seller",
+    location: "Harrogate",
+    quote: "As a small business owner, I was nervous about the investment. But Fire Launch paid for itself within the first month. The SEO setup alone has brought in so much organic traffic.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Michael Roberts",
+    role: "Sports Equipment Seller",
+    location: "Wakefield",
+    quote: "The dual Shopify and eBay setup was exactly what I needed. Having both channels managed professionally has doubled my reach. Brilliant service from start to finish.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Lucy Palmer",
+    role: "Home Decor Shop Owner",
+    location: "York",
+    quote: "Fire Launch understood my vision from day one. The store looks exactly how I imagined it - clean, professional, and easy to navigate. My customers love it!",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "David Clarke",
+    role: "Pet Supplies Retailer",
+    location: "Huddersfield",
+    quote: "From the initial call to launch day, everything was handled professionally. The product uploads were done perfectly, and the eBay listings are already outperforming my competition.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Sophie Williams",
+    role: "Baby Products Seller",
+    location: "Sheffield",
+    quote: "I was worried about managing an online store with a newborn at home. Fire Launch set everything up so intuitively that I can run my business from my phone. Game changer!",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Tom Anderson",
+    role: "Automotive Parts Seller",
+    location: "Dewsbury",
+    quote: "The variation and category setup for my car parts was complex, but Fire Launch nailed it. Every product is properly categorised and searchable. Exactly what I needed.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Rachel Green",
+    role: "Vintage Clothing Seller",
+    location: "Otley",
+    quote: "My vintage store needed a unique feel, and Fire Launch delivered. The theme customisation perfectly captures my brand. I've had customers compliment the website design!",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Chris Taylor",
+    role: "Garden Supplies Owner",
+    location: "Pontefract",
+    quote: "Best investment I've made for my business. The store went live ahead of schedule, the training was thorough, and the support team actually responds when you need help.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+  }
+];
+
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
