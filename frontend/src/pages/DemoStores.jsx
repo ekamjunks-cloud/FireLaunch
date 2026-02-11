@@ -147,9 +147,10 @@ export default function DemoStores() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#D92D20] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(217,45,32,0.25)]"
                   >
-                    View Website
+                    View Live Store
                     <ExternalLink className="w-4 h-4" />
                   </a>
+                  <p className="text-xs text-[#64748B] mt-3">Built by Fire Launch</p>
                 </div>
               </div>
             ))}
