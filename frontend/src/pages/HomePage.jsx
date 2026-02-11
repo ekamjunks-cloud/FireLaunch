@@ -494,60 +494,54 @@ export default function HomePage() {
               What Our Clients Say
             </h2>
             <p className="text-[#1F2A37] max-w-2xl mx-auto">
-              Real feedback from UK business owners who launched with Fire Launch.
+              Real feedback from Yorkshire business owners who launched with Fire Launch.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Testimonial 1 */}
-            <div className="testimonial-card" data-testid="testimonial-1">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#D92D20] text-[#D92D20]" />
+          <div className="max-w-5xl mx-auto px-12">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+              data-testid="testimonials-carousel"
+            >
+              <CarouselContent className="-ml-4">
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                    <div className="testimonial-card h-full" data-testid={`testimonial-${index + 1}`}>
+                      <div className="flex gap-1 mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-[#D92D20] text-[#D92D20]" />
+                        ))}
+                      </div>
+                      <p className="text-[#1F2A37] mb-6 text-sm leading-relaxed">
+                        "{testimonial.quote}"
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <img 
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-12 h-12 rounded-full object-cover"
+                        />
+                        <div>
+                          <p className="font-semibold text-[#0F172A]">{testimonial.name}</p>
+                          <p className="text-sm text-gray-500">{testimonial.role}, {testimonial.location}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
                 ))}
-              </div>
-              <p className="text-[#1F2A37] mb-6">
-                "Fire Launch delivered exactly what they promised. My Shopify store was live in 12 days, 
-                and I made my first sale within 48 hours. The training was invaluable - I feel confident 
-                managing everything myself now."
-              </p>
-              <div className="flex items-center gap-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1758518727888-ffa196002e59?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxjb25maWRlbnQlMjBidXNpbmVzcyUyMHdvbWFuJTIwcG9ydHJhaXQlMjBvZmZpY2V8ZW58MHx8fHwxNzcwODM3NzgyfDA&ixlib=rb-4.1.0&q=85"
-                  alt="Sarah Jenkins"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-semibold text-[#0F172A]">Sarah Jenkins</p>
-                  <p className="text-sm text-gray-500">Boutique Owner, London</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="testimonial-card" data-testid="testimonial-2">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#D92D20] text-[#D92D20]" />
-                ))}
-              </div>
-              <p className="text-[#1F2A37] mb-6">
-                "I'd tried setting up my own eBay store twice before and failed. Fire Launch made it 
-                look easy. Professional listings, proper templates, everything integrated. My sales have 
-                tripled compared to my old setup."
-              </p>
-              <div className="flex items-center gap-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwxfHxjb25maWRlbnQlMjBidXNpbmVzcyUyMG1hbiUyMHBvcnRyYWl0JTIwb2ZmaWNlfGVufDB8fHx8MTc3MDgzNzc4OHww&ixlib=rb-4.1.0&q=85"
-                  alt="David Thorne"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-semibold text-[#0F172A]">David Thorne</p>
-                  <p className="text-sm text-gray-500">Tech Retailer, Manchester</p>
-                </div>
-              </div>
-            </div>
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex -left-12 border-[#D92D20] text-[#D92D20] hover:bg-[#D92D20] hover:text-white" />
+              <CarouselNext className="hidden md:flex -right-12 border-[#D92D20] text-[#D92D20] hover:bg-[#D92D20] hover:text-white" />
+            </Carousel>
+            
+            {/* Mobile swipe indicator */}
+            <p className="text-center text-sm text-gray-400 mt-6 md:hidden">
+              Swipe to see more reviews
+            </p>
           </div>
         </div>
       </section>
