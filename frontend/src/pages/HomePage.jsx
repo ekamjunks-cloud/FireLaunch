@@ -398,7 +398,7 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="section-padding bg-[#F4F6F9]" data-testid="pricing-section">
+      <section id="pricing" className="section-padding" data-testid="pricing-section">
         <div className="container-main">
           <div className="text-center mb-16">
             <span className="badge mb-4">Transparent Pricing</span>
