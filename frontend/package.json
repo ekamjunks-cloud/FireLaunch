@@ -58,7 +58,6 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "vercel-build": "craco build",
     "test": "craco test"
   },
   "browserslist": {
