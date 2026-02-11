@@ -276,33 +276,56 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Starter Launch */}
-            <div className="card relative" data-testid="pricing-starter">
-              <h3 className="text-xl font-semibold text-[#0F172A] mb-2">Starter Launch</h3>
-              <p className="text-sm text-gray-500 mb-6">Perfect for new businesses</p>
+            {/* START Package */}
+            <div className="card relative" data-testid="pricing-start">
+              <div className="flex items-center gap-2 mb-2">
+                <Zap className="w-5 h-5 text-[#D92D20]" />
+                <h3 className="text-xl font-semibold text-[#0F172A]">START</h3>
+              </div>
+              <p className="text-sm text-gray-500 mb-6">Best for: New sellers launching their first professional online store</p>
               <div className="mb-6">
                 <span className="text-4xl font-bold text-[#0F172A] font-['Space_Grotesk']">£799</span>
               </div>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 mb-8 text-sm">
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Shopify or eBay store setup</span>
+                  <span className="text-[#1F2A37]">Full Shopify website setup</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Up to 25 product uploads</span>
+                  <span className="text-[#1F2A37]">Premium theme configuration</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Basic theme customisation</span>
+                  <span className="text-[#1F2A37]">Up to 15 products uploaded</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Payment gateway setup</span>
+                  <span className="text-[#1F2A37]">Up to 10 collections created</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">7 days email support</span>
+                  <span className="text-[#1F2A37]">Professionally structured homepage</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">About, Contact & Policy pages</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Payment gateway integration</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Shipping settings configuration</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Mobile optimisation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Basic on-page SEO structure</span>
                 </li>
               </ul>
               <a 
@@ -320,38 +343,42 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Growth Launch - Highlighted */}
-            <div className="card pricing-card-highlight relative" data-testid="pricing-growth">
+            {/* SELLER Package - Highlighted */}
+            <div className="card pricing-card-highlight relative" data-testid="pricing-seller">
               <div className="badge-popular">Most Popular</div>
-              <h3 className="text-xl font-semibold text-[#0F172A] mb-2 mt-2">Growth Launch</h3>
-              <p className="text-sm text-gray-500 mb-6">For businesses ready to scale</p>
+              <div className="flex items-center gap-2 mb-2 mt-2">
+                <Zap className="w-5 h-5 text-[#D92D20]" />
+                <h3 className="text-xl font-semibold text-[#0F172A]">SELLER</h3>
+              </div>
+              <p className="text-sm text-gray-500 mb-6">Best for: Sellers who want marketplace exposure alongside their website</p>
               <div className="mb-6">
                 <span className="text-4xl font-bold text-[#0F172A] font-['Space_Grotesk']">£999</span>
               </div>
-              <ul className="space-y-4 mb-8">
+              <p className="text-xs font-medium text-[#D92D20] mb-4">Everything in START +</p>
+              <ul className="space-y-3 mb-8 text-sm">
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Shopify + eBay store setup</span>
+                  <span className="text-[#1F2A37]">eBay seller account setup / optimisation</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Up to 50 product uploads</span>
+                  <span className="text-[#1F2A37]">eBay store configuration</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Premium theme customisation</span>
+                  <span className="text-[#1F2A37]">10 eBay product listings created</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Analytics & tracking setup</span>
+                  <span className="text-[#1F2A37]">Optimised titles & formatted descriptions</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">1-hour training session</span>
+                  <span className="text-[#1F2A37]">Category & variation setup</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">14 days priority support</span>
+                  <span className="text-[#1F2A37]">Basic store banner setup</span>
                 </li>
               </ul>
               <a 
@@ -370,37 +397,49 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Authority Launch */}
-            <div className="card relative" data-testid="pricing-authority">
-              <h3 className="text-xl font-semibold text-[#0F172A] mb-2">Authority Launch</h3>
-              <p className="text-sm text-gray-500 mb-6">For established brands</p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-[#0F172A] font-['Space_Grotesk']">£1,500</span>
+            {/* GROWTH Package */}
+            <div className="card relative" data-testid="pricing-growth">
+              <div className="flex items-center gap-2 mb-2">
+                <Zap className="w-5 h-5 text-[#D92D20]" />
+                <h3 className="text-xl font-semibold text-[#0F172A]">GROWTH</h3>
               </div>
-              <ul className="space-y-4 mb-8">
+              <p className="text-sm text-gray-500 mb-6">Best for: Sellers serious about volume and structured scaling</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-[#0F172A] font-['Space_Grotesk']">£1,199</span>
+              </div>
+              <p className="text-xs font-medium text-[#D92D20] mb-4">Everything in START +</p>
+              <ul className="space-y-3 mb-8 text-sm">
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Multi-channel store setup</span>
+                  <span className="text-[#1F2A37]">25 website products uploaded</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Up to 100 product uploads</span>
+                  <span className="text-[#1F2A37]">15 collections structured properly</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Custom design & branding</span>
+                  <span className="text-[#1F2A37]">Refined homepage layout structure</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">Advanced integrations</span>
+                  <span className="text-[#1F2A37]">eBay account setup / optimisation</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">3x training sessions</span>
+                  <span className="text-[#1F2A37]">20 eBay product listings created</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="check-icon mt-0.5" />
-                  <span className="text-[#1F2A37]">30 days VIP support</span>
+                  <span className="text-[#1F2A37]">Optimised titles & structured descriptions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Variation & category configuration</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="check-icon mt-0.5" />
+                  <span className="text-[#1F2A37]">Marketplace-ready formatting</span>
                 </li>
               </ul>
               <a 
@@ -414,8 +453,25 @@ export default function HomePage() {
                 </Button>
               </a>
               <p className="text-xs text-center text-gray-400 mt-4">
-                £750 deposit • £750 before launch
+                £599.50 deposit • £599.50 before launch
               </p>
+            </div>
+          </div>
+
+          {/* Additional Services */}
+          <div className="mt-12 max-w-2xl mx-auto">
+            <div className="bg-[#F4F6F9] rounded-xl p-6 text-center">
+              <h4 className="font-semibold text-[#0F172A] mb-4">Additional Services</h4>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 text-sm text-[#1F2A37]">
+                <div className="flex items-center justify-center gap-2">
+                  <Check className="w-4 h-4 text-[#D92D20]" />
+                  <span>Extra Website Products (per 10) – <strong>£199</strong></span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Check className="w-4 h-4 text-[#D92D20]" />
+                  <span>Extra eBay Listings (per 10) – <strong>£199</strong></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
