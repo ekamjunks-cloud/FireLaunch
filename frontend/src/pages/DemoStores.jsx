@@ -150,7 +150,7 @@ export default function DemoStores() {
                     View Live Store
                     <ExternalLink className="w-4 h-4" />
                   </a>
-                  <p className="text-xs text-[#64748B] mt-3">Built by Fire Launch</p>
+                  <p className="text-xs text-[#64748B] mt-3"></p>
                 </div>
               </div>
             ))}
