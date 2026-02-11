@@ -13,9 +13,17 @@ import {
   Star,
   Store,
   Package,
-  Settings
+  Settings,
+  ChevronLeft
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselPrevious, 
+  CarouselNext 
+} from '../components/ui/carousel';
 
 const CALENDLY_URL = "https://calendly.com/firelaunch/30min";
 
