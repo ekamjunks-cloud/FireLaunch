@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { 
   ShoppingCart, 
   Zap, 
-  Clock, 
   BarChart3, 
   Check, 
   ChevronRight, 
@@ -14,7 +13,9 @@ import {
   Store,
   Package,
   Settings,
-  ChevronLeft
+  Phone,
+  Wrench,
+  Rocket
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { 
@@ -194,14 +195,14 @@ export default function HomePage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6 leading-tight animate-fade-in-up delay-100">
               Launch Your{' '}
               <span className={`headline-underline ${headlineAnimated ? 'animate' : ''}`}>
-                Shopify & eBay
+                Shopify Website & eBay Store
               </span>{' '}
-              Store in 14 Days
+              in 14 Days — Built for UK Sellers
             </h1>
             
             <p className="text-lg text-[#1F2A37] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-200">
-              We build structured, high-converting e-commerce systems for UK businesses. 
-              No guesswork. No delays. Just results.
+              Professional Shopify website development and eBay store setup for UK ecommerce sellers. 
+              Get a conversion-optimised online store, ready to sell — delivered in just 14 days.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
@@ -254,7 +255,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <span className="badge mb-4">What We Do</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
-              End-to-End E-Commerce Launch Services
+              Shopify Website Development & eBay Store Setup Services in the UK
             </h2>
             <p className="text-[#1F2A37] max-w-2xl mx-auto">
               Everything you need to go from idea to live store, selling products and generating revenue.
@@ -343,8 +344,61 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="section-padding" data-testid="how-it-works-section">
+        <div className="container-main">
+          <div className="text-center mb-16">
+            <span className="badge mb-4">Our Process</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+              How It Works
+            </h2>
+            <p className="text-[#1F2A37] max-w-2xl mx-auto">
+              From first call to live store in three simple steps.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* Step 1 */}
+            <div className="text-center" data-testid="step-1">
+              <div className="w-16 h-16 bg-[#D92D20]/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <Phone className="w-8 h-8 text-[#D92D20]" />
+              </div>
+              <div className="text-sm font-semibold text-[#D92D20] mb-2">Step 1</div>
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-3">Strategy Call</h3>
+              <p className="text-[#64748B] text-sm">
+                We discuss your business, products, and goals. You'll get a clear plan and timeline for your store launch.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="text-center" data-testid="step-2">
+              <div className="w-16 h-16 bg-[#D92D20]/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <Wrench className="w-8 h-8 text-[#D92D20]" />
+              </div>
+              <div className="text-sm font-semibold text-[#D92D20] mb-2">Step 2</div>
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-3">Store Build</h3>
+              <p className="text-[#64748B] text-sm">
+                We build your Shopify website and eBay store. Products uploaded, payments configured, everything optimised.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="text-center" data-testid="step-3">
+              <div className="w-16 h-16 bg-[#D92D20]/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <Rocket className="w-8 h-8 text-[#D92D20]" />
+              </div>
+              <div className="text-sm font-semibold text-[#D92D20] mb-2">Step 3</div>
+              <h3 className="text-xl font-semibold text-[#0F172A] mb-3">Launch & Handover</h3>
+              <p className="text-[#64748B] text-sm">
+                Your store goes live. We train you on everything and hand over full control. You're ready to sell.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
-      <section id="pricing" className="section-padding" data-testid="pricing-section">
+      <section id="pricing" className="section-padding bg-[#F4F6F9]" data-testid="pricing-section">
         <div className="container-main">
           <div className="text-center mb-16">
             <span className="badge mb-4">Transparent Pricing</span>
@@ -559,16 +613,26 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="section-padding bg-[#F4F6F9]" data-testid="testimonials-section">
+      <section id="testimonials" className="section-padding" data-testid="testimonials-section">
         <div className="container-main">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <span className="badge mb-4">Client Results</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
-              What Our Clients Say
+              Trusted by UK Ecommerce Sellers
             </h2>
-            <p className="text-[#1F2A37] max-w-2xl mx-auto">
-              Real feedback from Yorkshire business owners who launched with Fire Launch.
+            <p className="text-[#1F2A37] max-w-2xl mx-auto mb-6">
+              Real feedback from UK business owners who launched with Fire Launch.
             </p>
+            {/* Star Rating Summary */}
+            <div className="flex items-center justify-center gap-2">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#D92D20] text-[#D92D20]" />
+                ))}
+              </div>
+              <span className="text-[#0F172A] font-semibold">5.0</span>
+              <span className="text-[#64748B]">from 50+ reviews</span>
+            </div>
           </div>
 
           <div className="max-w-5xl mx-auto px-12">
@@ -660,9 +724,11 @@ export default function HomePage() {
                   Fire Launch
                 </span>
               </div>
-              <p className="text-gray-400 max-w-sm">
-                UK's founder-led e-commerce launch studio. We help businesses launch 
-                structured Shopify and eBay systems in 14 days.
+              <p className="text-gray-400 max-w-sm mb-4">
+                UK's founder-led e-commerce launch studio. Professional Shopify website setup UK and eBay store setup UK services for businesses ready to sell online.
+              </p>
+              <p className="text-gray-500 text-sm">
+                Shopify Website Setup UK • eBay Store Setup UK • UK Ecommerce Launch Services
               </p>
             </div>
 
