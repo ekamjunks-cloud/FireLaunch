@@ -15,45 +15,59 @@ const CALENDLY_URL = "https://calendly.com/firelaunch/30min";
 const demoStores = [
   {
     id: 1,
-    name: "StyleHaven Boutique",
-    description: "Premium fashion store with curated collections",
+    name: "Stylix",
+    description: "Fashionable Sports Clothing Store",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
-    url: "https://example.com/stylehaven" // Replace with actual store URL
+    url: "https://dt-stylix.myshopify.com" // Replace with actual store URL
   },
   {
     id: 2,
-    name: "TechVault UK",
-    description: "Electronics and gadgets marketplace",
+    name: "Doppo Store",
+    description: "Modern Office Furniture Store",
     image: "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=600&h=400&fit=crop",
-    url: "https://example.com/techvault" // Replace with actual store URL
+    url: "https://doppostore.myshopify.com/?_ab=0&_fd=0&_sc=1" // Replace with actual store URL
   },
   {
     id: 3,
-    name: "Nordic Home",
-    description: "Minimalist home decor and furniture",
+    name: "Mikadu",
+    description: "Luxury Handbags And Clothes Store",
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-    url: "https://example.com/nordichome" // Replace with actual store URL
+    url: "https://mikadu-store-demo.myshopify.com" // Replace with actual store URL
   },
   {
     id: 4,
-    name: "PetPals Market",
-    description: "Quality pet supplies and accessories",
+    name: "Nego",
+    description: "Fsshion Store",
     image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop",
-    url: "https://example.com/petpals" // Replace with actual store URL
+    url: "http://nego2.demo.towerthemes.com" // Replace with actual store URL
   },
   {
     id: 5,
-    name: "FitGear Pro",
-    description: "Sports equipment and fitness gear",
+    name: "Hawki",
+    description: "Single Product Store",
     image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop",
-    url: "https://example.com/fitgear" // Replace with actual store URL
+    url: "https://hawki-theme.myshopify.com" // Replace with actual store URL
   },
   {
     id: 6,
-    name: "Artisan Craft Co",
-    description: "Handcrafted goods and unique gifts",
+    name: "GlideX",
+    description: "Electronic Scooter Store",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-    url: "https://example.com/artisancraft" // Replace with actual store URL
+    url: "https://greenshift-road.myshopify.com" // Replace with actual store URL
+  }
+  {
+    id: 7,
+    name: "Divize",
+    description: "Furniture And Interior Store",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    url: "https://divize-store-demo.myshopify.com" // Replace with actual store URL
+  }
+ {
+    id: 8,
+    name: "InTrend",
+    description: "Home Furniture Store",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    url: "https://intrend-theme.myshopify.com" // Replace with actual store URL
   }
 ];
 // ============================================
