@@ -54,14 +54,14 @@ const demoStores = [
     description: "Electronic Scooter Store",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
     url: "https://greenshift-road.myshopify.com" // Replace with actual store URL
-  }
+  },
   {
     id: 7,
     name: "Divize",
     description: "Furniture And Interior Store",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
     url: "https://divize-store-demo.myshopify.com" // Replace with actual store URL
-  }
+  },
  {
     id: 8,
     name: "InTrend",
