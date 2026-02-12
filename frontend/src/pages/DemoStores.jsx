@@ -16,7 +16,7 @@ const demoStores = [
   {
     id: 1,
     name: "Stylix",
-    description: "Stylix.png",
+    description: "https://www.firelaunch.uk/images/Stylix.jpg",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
     url: "https://dt-stylix.myshopify.com" // Replace with actual store URL
   },
