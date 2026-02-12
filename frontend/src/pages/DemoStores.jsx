@@ -17,7 +17,7 @@ const demoStores = [
     id: 1,
     name: "Stylix",
     description: "Sports Fashion Brand Store",
-    image: "https://github.com/ekamjunks-cloud/FireLaunch/blob/main/frontend/public/images/Stylix.png",
+    image: "/images/Stylix.png",
     url: "https://dt-stylix.myshopify.com" // Replace with actual store URL
   },
   {
