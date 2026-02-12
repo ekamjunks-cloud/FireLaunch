@@ -204,9 +204,6 @@ export default function HomePage() {
               Professional Shopify website development and eBay store setup for UK ecommerce sellers. 
               Get a conversion-optimised online store, ready to sell — delivered in just 14 days.
             </p>
-            <p className="text-base text-[#475569] mb-8 max-w-3xl mx-auto animate-fade-in-up delay-250">
-              Fire Launch specialises in Shopify website development and eBay store setup services for UK sellers ready to launch professionally. We build structured, conversion-focused ecommerce stores designed for the UK market, handling product uploads and collection setup alongside marketplace-ready eBay listings. Whether you’re starting your first Shopify store or expanding onto eBay UK, we deliver a fully built, ready-to-sell system built to launch with confidence.
-            </p>
             
 
             
