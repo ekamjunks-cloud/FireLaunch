@@ -24,49 +24,49 @@ const demoStores = [
     id: 2,
     name: "Doppo Store",
     description: "Modern Office Furniture Store",
-    image: "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=600&h=400&fit=crop",
+    image: "/images/Doppo.png",
     url: "https://doppostore.myshopify.com/?_ab=0&_fd=0&_sc=1" // Replace with actual store URL
   },
   {
     id: 3,
     name: "Mikadu",
     description: "Luxury Handbags And Clothes Store",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
+    image: "/images/Mikadu.png",
     url: "https://mikadu-store-demo.myshopify.com" // Replace with actual store URL
   },
   {
     id: 4,
     name: "Nego",
     description: "Fsshion Store",
-    image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop",
+    image: "/images/Nego.png",
     url: "http://nego2.demo.towerthemes.com" // Replace with actual store URL
   },
   {
     id: 5,
     name: "Hawki",
     description: "Single Product Store",
-    image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop",
+    image: "/images/Hawki.png",
     url: "https://hawki-theme.myshopify.com" // Replace with actual store URL
   },
   {
     id: 6,
     name: "GlideX",
     description: "Electronic Scooter Store",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    image: "/images/Glidex.png",
     url: "https://greenshift-road.myshopify.com" // Replace with actual store URL
   },
   {
     id: 7,
     name: "Divize",
     description: "Furniture And Interior Store",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    image: "/images/Divize.png",
     url: "https://divize-store-demo.myshopify.com" // Replace with actual store URL
   },
   {
     id: 8,
     name: "InTrend",
     description: "Home Furniture Store",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    image: "/images/Intrend.png",
     url: "https://intrend-theme.myshopify.com" // Replace with actual store URL
   }
 ];
